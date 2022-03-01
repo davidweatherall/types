@@ -2054,6 +2054,12 @@ declare namespace overwolf.windows2 {
     window: windows.WindowInfo;
   }
 
+  interface DPIChangedArgs {
+    window: overwolf.windows.WindowInfo;
+    prevDPI: number;
+    newDPI: number;
+  }
+
   /**
    * Creates window by the window id
    * @param id the id of the new window   
@@ -2076,6 +2082,11 @@ declare namespace overwolf.windows2 {
    * Fired window moved
    */
    const moved: Event<overwolf.windows.WindowInfo>;
+
+   /**
+    * Fired when DPI changes for a window
+    */
+   const dpiChanged: Event<DPIChangedArgs>;
 
    /**
    * Fired when window content is ready.
