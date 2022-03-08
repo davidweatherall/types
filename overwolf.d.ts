@@ -2084,6 +2084,11 @@ declare namespace overwolf.windows2 {
    const moved: Event<overwolf.windows.WindowInfo>;
 
    /**
+    * Fired when a dragging operation starts
+    */
+   const dragStarted: Event<overwolf.windows.WindowInfo>;
+
+   /**
     * Fired when DPI changes for a window
     */
    const dpiChanged: Event<DPIChangedArgs>;
@@ -5751,8 +5756,7 @@ declare namespace overwolf.utils {
     dpiY: number;
     width: number;
     height: number;
-    workingAreaWidth: number;
-    workingAreaHeight: number;
+    workingArea: overwolf.windows.ODKRect;
     is_primary: boolean;
     handle: { value: number; };
   }
