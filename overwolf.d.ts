@@ -1406,6 +1406,8 @@ declare namespace overwolf.windows {
     top: number;
     width: number;
     height: number;
+    dpiScale: number;
+    logicalBounds: ODKRect;
     monitorId: string;
     type: WindowType;
   }
@@ -1424,6 +1426,13 @@ declare namespace overwolf.windows {
     left: number;
     width: number;
     height: number;
+  }
+
+  interface ODKRect2 {
+    x?: number;
+    y?: number;
+    width?: number;
+    height?: number;
   }
 
   interface SetWindowPositionProperties {
@@ -1492,7 +1501,7 @@ declare namespace overwolf.windows {
 
   interface SetWindowBoundsParams {
     window_id: string;
-    bounds: ODKRect;
+    bounds: ODKRect2;
     auto_dpi_resize?: boolean;
   }
 
@@ -1524,6 +1533,7 @@ declare namespace overwolf.windows {
     id: string;
     name: string;
     monitor: utils.Display;
+    window: WindowInfo;
   }
 
   /**
