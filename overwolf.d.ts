@@ -2657,6 +2657,10 @@ declare namespace overwolf.games {
     gameInfo?: InstalledGameInfo;
   }
 
+  interface GetRunningGameInfoResult2 extends Result {
+    gameInfo: GetRunningGameInfoResult;
+  }
+
   interface GetRunningGameInfoResult extends Result {
     isInFocus: boolean;
     isRunning: boolean;
@@ -2720,6 +2724,15 @@ declare namespace overwolf.games {
    */
   function getRunningGameInfo(
     callback: CallbackFunction<GetRunningGameInfoResult>
+  ): void;
+
+  /**
+   * Returns an object with information about the currently running game (or
+   * active games, if more than one), or null if no game is running.
+   * @param callback Called with the currently running or active game info. See
+   */
+  function getRunningGameInfo2(
+    callback: CallbackFunction<GetRunningGameInfoResult2>
   ): void;
 
   /**
