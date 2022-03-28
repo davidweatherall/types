@@ -1391,7 +1391,7 @@ declare namespace overwolf.windows {
   }
 
   const enum WindowType {
-    Offscreen  = "Offscreen",
+    Offscreen  = "OffScreen",
     Desktop    = "Desktop",
     Background = "Background"
    }
